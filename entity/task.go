@@ -6,9 +6,9 @@ type TaskID int64
 type TaskStatus string
 
 const (
-	TaskStatusTodo TaskStatus = "todo"
+	TaskStatusTodo  TaskStatus = "todo"
 	TaskStatusDoing TaskStatus = "doing"
-	TaskStatus Done TaskStatus = "done"
+	TaskStatusDone  TaskStatus = "done"
 )
 
 type Task struct {
