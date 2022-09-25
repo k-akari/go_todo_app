@@ -1,4 +1,4 @@
-package Handler
+package handler
 
 import (
 	"encoding/json"
@@ -16,7 +16,7 @@ type AddTask struct {
 }
 
 func (at *AddTask) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	ctx := r.Content()
+	ctx := r.Context()
 	var b struct {
 		Title string `json:"title" validate:"required"`
 	}
@@ -41,7 +41,7 @@ func (at *AddTask) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	rsp := struct {
-		ID int `json:"id"`
+		ID entity.TaskID `json:"id"`
 	}{ID: id}
 	RespondJSON(ctx, w, rsp, http.StatusOK)
 }
