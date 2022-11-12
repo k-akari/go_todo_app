@@ -11,6 +11,7 @@ import (
 )
 
 func TestRepository_ListTasks(t *testing.T) {
+	t.Parallel()
 	ctx := context.Background()
 	// entity.Taskを生成する他のテストケースと混ざるとテストがフェイルする
 	// そのため、トランザクションをはることでこのテストケースの中だけのテーブル状態にする
